@@ -8,9 +8,12 @@ from basic_type import Node
 def dfs(node: Node):
     if node is None:
         return 0
+    # The following code is not necessary,
+    # It returns earlier for leave node, and treat None and leave node differently.
+    # If deleted, it is more uniform and concise.
     # Calculate current node
-    if not node.left and not node.right:
-        return node.val
+    # if not node.left and not node.right:
+    #    return node.val
     # Calculate the sum of left and right subtree
     return node.val + dfs(node.left) + dfs(node.right)
 
